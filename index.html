@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cbus Super Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap" rel="stylesheet"> 
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form onsubmit="updateGraph();return false;">
+            <input type="date" id="start" required />
+            <input type="date" id="end" required />
+            <input type="submit" value="Graph" />
+        </form>
+        <div>
+            <canvas id="graph"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
