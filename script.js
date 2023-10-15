@@ -17,16 +17,14 @@ function getData() {
     };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
-    return fetch(url.href)
+    return fetch("https://cors-anywhere.herokuapp.com/" + url.href)
         .then(res => res.json())
         .then(json => json.reverse());
 }
 
 async function updateGraph() {
-    if (!data) {
-        ctx.fillText("Loading...", 10, 50);
-        data = await getData();
-    }
+    ctx.fillText("Loading...", 10, 50);
+    data = await getData();
     if (chart != null) {
         chart.destroy();
     }
