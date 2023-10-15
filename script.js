@@ -26,7 +26,7 @@ async function updateGraph() {
         chart.destroy();
     }
 
-    ctx.font = "32px Poppins"
+    ctx.font = "32px serif"
     ctx.fillText("Loading...", 10, 50);
 
     data = await getData();
