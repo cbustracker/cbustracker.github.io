@@ -1,5 +1,4 @@
 var ctx = document.getElementById("graph").getContext("2d")
-ctx.font = "32px Poppins"
 
 var data = null;
 var chart = null;
@@ -23,11 +22,14 @@ function getData() {
 }
 
 async function updateGraph() {
-    ctx.fillText("Loading...", 10, 50);
-    data = await getData();
     if (chart != null) {
         chart.destroy();
     }
+
+    ctx.font = "32px Poppins"
+    ctx.fillText("Loading...", 10, 50);
+
+    data = await getData();
 
     graphData = {
         labels: data.map(x => x["DAILY"] || x["WEEKLY"]),
@@ -36,7 +38,6 @@ async function updateGraph() {
 
     for (key in data[0]) {
         if (key != "DAILY" && key != "WEEKLY") {
-            console.log(key);
             let temp = 0;
             graphData.datasets.push({
                 label: key,
